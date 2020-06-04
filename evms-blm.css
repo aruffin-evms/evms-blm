@@ -51,6 +51,10 @@ body {
   background-color: #212121;
 }
 
+.j-stacker-wrapper {
+  /* border: solid 1px gray !important; */
+}
+
 .j-twitter-quote-text {
 
 }
@@ -65,6 +69,7 @@ body {
 }
 .j-social-icon {
   background-color: #212121 !important;
+  border-bottom: none !important;
 }
 
 .juicer-button {
