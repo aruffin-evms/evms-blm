@@ -9,4 +9,4 @@ lastName.placeholder = 'Last name'
 email.placeholder = 'Email'
 messageBox.placeholder = 'Type your message'
 
-submitButton.value = "Post"
+submitButton.value = "Add your message"

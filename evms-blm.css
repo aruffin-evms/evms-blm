@@ -1,15 +1,43 @@
+/* [Start] css reset */
+html, body,
+h1, h2, h3, h4, h5, h6,
+a, p, span,
+em, small, strong,
+sub, sup,
+mark, del, ins, strike,
+abbr, dfn,
+blockquote, q, cite,
+code, pre,
+ol, ul, li, dl, dt, dd,
+div, section, article,
+main, aside, nav,
+header, hgroup, footer,
+img, figure, figcaption,
+address, time,
+audio, video,
+canvas, iframe,
+details, summary,
+fieldset, form, label, legend,
+table, caption,
+tbody, tfoot, thead,
+tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+/* [End] css reset */
+
 body {
-  background-color: #212121;
-  color: white;
+  color: #fafafa;
 }
 
 .evms-blm {
-  
+  background-color: #212121;
 }
 
 .evms-blm__title {
   font-size: 70px;
-  color: white;
+  color: #fafafa;
   max-width: 1440px;
   margin: 0 auto;
   padding-top: 50px;
@@ -18,7 +46,7 @@ body {
 
 .evms-blm__subtitle {
   font-size: 25px;
-  color: white;
+  color: #fafafa;
   max-width: 600px;
   margin: 0 auto;
   padding-top: 20px;
@@ -27,36 +55,65 @@ body {
 
 .evms-blm__message-form {
   max-width: 1440px;
-  height: 700px;
+  height: auto;
   width: 70%;
   margin: 100px auto;
   text-align: center;
 }
 
+.evms-blm__headline {
+  color: #fafafa !important;
+}
+
 .evms-blm__description {
   width: 50%;
   margin: 0 auto;
+  padding-top: 10px;
 }
-/* .evms-blm__message-form p {
-  font-size: 50px;
-  color: white;
-  text-align: center;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-} */
 
 .evms-blm__solidarity-wall {
   height: 800px;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 60px auto;
+  overflow: scroll;
 }
+
+/* /* button rollover animation */
+
+.juicer-button:hover, #fsSubmitButton3910490:hover {
+  background-color: #212121 !important;
+  color: #fafafa !important;
+  border: solid 1px #fafafa !important;
+}
+
+/* .juicer-button, #fsSubmitButton3910490 {
+  color: #FFF!important;
+  border: 2px solid rgb(216, 2, 134)!important;
+  border-radius: 0px!important;
+  padding: 18px 36px!important;
+  display: inline-block!important;
+  font-family: "Lucida Console", Monaco, monospace!important;
+  font-size: 14px!important;
+  letter-spacing: 1px!important;
+  cursor: pointer!important;
+  box-shadow: inset 0 0 0 0 #D80286!important;
+  -webkit-transition: ease-out 0.4s!important;
+  -moz-transition: ease-out 0.4s!important;
+  transition: ease-out 0.4s!important;
+} */
+
+/* .juicer-button:hover, #fsSubmitButton3910490 {
+  box-shadow: inset 400px 0 0 0 #D80286;
+} */
 
 /* juicer feed styles */
 .juicer-feed  {
   background-color: #212121;
 }
 
+.j-display-filters {
+  display: none !important;
+}
 .j-stacker-wrapper {
   /* border: solid 1px gray !important; */
 }
@@ -66,35 +123,30 @@ body {
 }
 
 .feed-item {
-  border: solid 2px white;
+  border: solid 2px #fafafa;
   background-color: #212121 !important;
 }
 
 .feed-item h3, .feed-item p, .feed-item a, .j-twitter-quote-text {
-  color: white !important;
+  color: #fafafa !important;
 }
 .j-social-icon {
   background-color: #212121 !important;
   border-bottom: none !important;
 }
 
-.juicer-button {
-  background-color: #212121;
-  color: white !important;
-  border: solid 1px white !important;
+.juicer-button, j-paginate {
+  background-color: #fafafa !important;
+  color: #212121 !important;
+  border: solid 1px #fafafa !important;
   border-radius: 5px;
-  transition: 1s all;
-}
-
-.juicer-button:hover {
-  transform: scale(1.2);
-  background-color: #212121 !important;
+  transition: 1s all !important;
 }
 
 /* form stack styles */
 .fsBody, .fsForm {
   background-color: #212121 !important;
-  /* color: white !important; */
+  /* color: #fafafa !important; */
 }
 
 .fsLabel {
@@ -106,29 +158,29 @@ body {
 }
 
 .fsLabel, .fsRequiredMarker, .fsCounter {
-  color: white !important;
+  color: #fafafa !important;
 }
 
 .fsField {
   background-color: #212121 !important;
-  color: white !important;
+  color: #fafafa !important;
 }
 
 
 /* submit button */
 #fsSubmitButton3910490 {
-  background-color: white !important;
+  background-color: #fafafa !important;
   color: #212121 !important;
   border-radius: 5px !important;
-  width: 200px !important;
+  width: 250px !important;
   height: 50px !important;
   font-size: 22px !important;
   transition: all 1s;
 }
 
-#fsSubmitButton3910490:hover {
+/* #fsSubmitButton3910490:hover {
   transform: scale(1.2);
-}
+} */
 
 /* first name */
 #field93569054-first {
@@ -140,7 +192,7 @@ body {
 #field93569057::placeholder,
 #field93569061::placeholder {
   /* content: 'first name'; */
-  color: white;
+  color: #fafafa;
 }
 
 /* todo: troubleshoot error message */
@@ -153,6 +205,6 @@ body {
 .fsValidationError select, 
 .fsValidationError textarea {
   border: 1px solid #d0d4d8 !important;
-  color: white !important;
+  color: #fafafa !important;
   background-color: #212121 !important;
 }
