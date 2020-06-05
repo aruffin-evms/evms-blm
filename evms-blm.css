@@ -1,5 +1,6 @@
 body {
   background-color: #212121;
+  color: white;
 }
 
 .evms-blm {
@@ -15,7 +16,7 @@ body {
   text-align: center;
 }
 
-.evms-blm__statement {
+.evms-blm__subtitle {
   font-size: 25px;
   color: white;
   max-width: 600px;
@@ -29,17 +30,21 @@ body {
   height: 700px;
   width: 70%;
   margin: 100px auto;
-  background-color: gray;
+  text-align: center;
 }
 
-.evms-blm__message-form p {
+.evms-blm__description {
+  width: 50%;
+  margin: 0 auto;
+}
+/* .evms-blm__message-form p {
   font-size: 50px;
   color: white;
   text-align: center;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-}
+} */
 
 .evms-blm__solidarity-wall {
   height: 800px;
@@ -47,6 +52,7 @@ body {
   margin: 0 auto;
 }
 
+/* juicer feed styles */
 .juicer-feed  {
   background-color: #212121;
 }
@@ -82,5 +88,71 @@ body {
 
 .juicer-button:hover {
   transform: scale(1.2);
+  background-color: #212121 !important;
+}
+
+/* form stack styles */
+.fsBody, .fsForm {
+  background-color: #212121 !important;
+  /* color: white !important; */
+}
+
+.fsLabel {
+  display: none !important;
+}
+
+.fsSupporting {
+  display: none !important;
+}
+
+.fsLabel, .fsRequiredMarker, .fsCounter {
+  color: white !important;
+}
+
+.fsField {
+  background-color: #212121 !important;
+  color: white !important;
+}
+
+
+/* submit button */
+#fsSubmitButton3910490 {
+  background-color: white !important;
+  color: #212121 !important;
+  border-radius: 5px !important;
+  width: 200px !important;
+  height: 50px !important;
+  font-size: 22px !important;
+  transition: all 1s;
+}
+
+#fsSubmitButton3910490:hover {
+  transform: scale(1.2);
+}
+
+/* first name */
+#field93569054-first {
+  /* background-color: #212121 !important; */
+}
+
+#field93569054-first::placeholder, 
+#field93569054-last::placeholder,
+#field93569057::placeholder,
+#field93569061::placeholder {
+  /* content: 'first name'; */
+  color: white;
+}
+
+/* todo: troubleshoot error message */
+/* required field error styles */
+.fsValidationError .fsSignature, 
+.fsValidationError input[type="email"], 
+.fsValidationError input[type="number"], 
+.fsValidationError input[type="tel"], 
+.fsValidationError input[type="text"], 
+.fsValidationError select, 
+.fsValidationError textarea {
+  border: 1px solid #d0d4d8 !important;
+  color: white !important;
   background-color: #212121 !important;
 }
