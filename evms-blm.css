@@ -140,6 +140,7 @@ body {
 .feed-item h3, .feed-item p, .feed-item a, .j-twitter-quote-text {
   color: #fafafa !important;
 }
+
 .j-social-icon {
   background-color: #212121 !important;
   border-bottom: none !important;
@@ -196,6 +197,11 @@ body {
 
 /* first name */
 #field93569057 {
+  display: none;
+}
+
+/* file upload */
+#fsCell93615324 {
   display: none;
 }
 
