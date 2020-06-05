@@ -27,6 +27,10 @@ tr, th, td {
 }
 /* [End] css reset */
 
+.wrapper {
+  background-color: #212121 !important;
+}
+
 body {
   color: #fafafa;
 }
