@@ -32,6 +32,7 @@ tr, th, td {
 }
 
 .page-header-light-blue {
+  background-color: #212121 !important;
   background-image: url(./page-header-white-evms-lines.svg) !important;
 }
 
