@@ -27,6 +27,14 @@ tr, th, td {
 }
 /* [End] css reset */
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 .wrapper {
   background-color: #212121 !important;
 }
@@ -39,6 +47,10 @@ tr, th, td {
 body {
   font-family: myriad-pro, myriad, sans-serif;
   color: #fafafa;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .evms-blm {
@@ -63,11 +75,38 @@ body {
   text-align: center;
 }
 
+.evms-blm__intro {
+  max-width: 1440px;
+  height: auto;
+  width: 70%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.evms-blm__cta {
+  background-color: #fafafa !important;
+  color: #212121 !important;
+  border-radius: 5px !important;
+  width: 250px !important;
+  /* height: 50px !important; */
+  font-size: 22px !important;
+  transition: all 1s;
+  font-family: myriad-pro, myriad, sans-serif !important;
+  padding: 15px 30px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  text-align: center;
+}
+
+/* ..evms-blm__cta:hover {
+
+} */
 .evms-blm__message-form {
   max-width: 1440px;
   height: auto;
   width: 70%;
-  margin: 100px auto;
+  margin: 50px auto;
   text-align: center;
 }
 
@@ -82,7 +121,7 @@ body {
 }
 
 .evms-blm__solidarity-wall {
-  height: 1000px;
+  height: auto;
   max-width: 1440px;
   margin: 60px auto;
   overflow: scroll;
@@ -90,7 +129,7 @@ body {
 
 /* /* button rollover animation */
 
-.juicer-button:hover, #fsSubmitButton3910490:hover {
+.juicer-button:hover, #fsSubmitButton3910490:hover, .evms-blm__cta:hover {
   background-color: #212121 !important;
   color: #fafafa !important;
   border: solid 1px #fafafa !important;
@@ -202,7 +241,7 @@ body {
 
 /* file upload */
 #fsCell93615324 {
-  display: none;
+  /* display: none; */
 }
 
 #field93569054-first::placeholder, 
