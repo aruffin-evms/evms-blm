@@ -63,10 +63,37 @@ function hideUnwantedElements(columnNumber) {
         var message = jMessage.children[4];
         message.innerHTML = message.innerHTML.replace("Message: ", "");
 
-        jMessage.insertBefore(tempImg, imageContainer);
+        jMessage.insertBefore(tempImg, jMessage.children[0]);
         imageContainer.innerHTML = "";
     }
 }
+/*
+    var feed = document.querySelector('.j-stacker');
+    var feedColumn = feed.children[columnNumber];
+    for(var j = 0; j < feedColumn.children.length; j++){
+        var feedCell = feedColumn.children[j];
+        var feedText = feedCell.children[1];  
+        var feedMessage = feedText.children[0];
+        var feedMessageText = feedMessage.children[3];
+        feedMessageText.innerHTML = feedMessageText.innerHTML.replace("Message: ", "");
+
+        var feedMessageChildren = feedMessage.childNodes;
+        var paragraphCount = 0;
+        for(var i = 0; i < feedMessageChildren.length; i++){
+            if(feedMessageChildren[i].nodeName == "P"){
+                paragraphCount++;
+            }
+        }
+        if(paragraphCount == 4){
+            var feedImageContainer = feedMessage.children[4];
+            var feedImageLink = feedImageContainer.children[0];
+            var img = document.createElement("img");
+            img.src = feedImageLink.href;
+            feedMessage.appendChild(img);
+            feedImageContainer.innerHTML = "";
+        }
+    }
+*/
 function hideUnwantedElementsInModal(number){
     var jOverlay = document.body.lastChild;
     var jOverlayContent = jOverlay.children[0];
@@ -90,7 +117,7 @@ function hideUnwantedElementsInModal(number){
     var message = jMessage.children[4];
     message.innerHTML = message.innerHTML.replace("Message: ", "");
 
-    jMessage.insertBefore(tempImg, imageContainer);
+    jMessage.insertBefore(tempImg, jMessage.children[0]);
     imageContainer.innerHTML = "";
 }
 function hideUnwantedElements2(index) {
@@ -101,7 +128,7 @@ function hideUnwantedElements2(index) {
 window.onload = function(){
     var numberOfColumns = 3;
     for(var i = 0; i < numberOfColumns; i++){
-        sleep(hideUnwantedElements, i, this, 100, 100);
+        sleep(hideUnwantedElements, i, this, 500, 500);
     }
     var j = 0;
     var checkExist = setInterval(function() {
