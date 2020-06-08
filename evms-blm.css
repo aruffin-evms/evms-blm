@@ -255,6 +255,7 @@ html {
 .j-message p:nth-child(6) {
   position: relative;
   top: 15px;
+  margin-right: 25px !important;
 } 
 
 
