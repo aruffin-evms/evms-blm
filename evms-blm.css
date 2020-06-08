@@ -207,9 +207,38 @@ html {
   display: none;
 }
 
+.j-title {
+  /* margin-top: 350px !important; */
+  position: relative !important;
+  top: -50px !important;
+}
+
+.j-message img {
+  max-height: 300px;
+  object-fit: cover;
+  position: relative;
+  top: -98px;
+}
+
+.j-message p:nth-child(1) {
+  position: relative !important;
+  top: 370px;
+}
+
 .j-message p:nth-child(2) {
   display: none;
 }
+
+.j-message p:nth-child(3) {
+  position: relative;
+  top: 325px !important;
+}
+
+.j-message p:nth-child(4) {
+  position: relative;
+  top: 340px !important;
+}
+
 /* form stack styles */
 .fsBody, .fsForm {
   background-color: #212121 !important;
