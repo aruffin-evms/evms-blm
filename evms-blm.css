@@ -207,12 +207,14 @@ html {
   display: none;
 }
 
-.j-title {
-  /* margin-top: 350px !important; */
+/* .j-title {
   position: relative !important;
   top: -50px !important;
 }
 
+.j-overlay-text {
+  color: white !important;
+}
 .j-message img {
   max-height: 300px;
   object-fit: cover;
@@ -237,7 +239,7 @@ html {
 .j-message p:nth-child(4) {
   position: relative;
   top: 270px !important;
-}
+} */
 
 /* form stack styles */
 .fsBody, .fsForm {
@@ -309,7 +311,7 @@ html {
 #field93569057::placeholder,
 #field93569061::placeholder {
   /* content: 'first name'; */
-  color: #fafafa;
+  color: #fafafa !important;
 }
 
 #field93615324DeleteButton {
