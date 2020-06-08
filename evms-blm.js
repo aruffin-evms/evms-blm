@@ -45,27 +45,30 @@ function hideUnwantedElements(columnNumber) {
 
     for(var j = 0; j < feedColumn.children.length; j++){
         var feedCell = feedColumn.children[j];
-        var jText = feedCell.children[1];
-        var jMessage = jText.children[0];
+        if(feedCell.getAttribute("name") != "processed"){
+            var jText = feedCell.children[1];
+            var jMessage = jText.children[0];
 
-        var imageContainer = jMessage.children[1];
-        popTextNodes(imageContainer);
-        var imageAnchor = imageContainer.children[0];
-        var imageURL = imageAnchor.href;
-        var tempImg = document.createElement("img");
-        tempImg.src = imageURL;
+            var imageContainer = jMessage.children[1];
+            popTextNodes(imageContainer);
+            var imageAnchor = imageContainer.children[0];
+            var imageURL = imageAnchor.href;
+            var tempImg = document.createElement("img");
+            tempImg.src = imageURL;
 
-        var formalName = jMessage.children[2];
-        formalName.innerHTML = "";
+            var formalName = jMessage.children[2];
+            formalName.innerHTML = "";
 
-        var roleAtEVMS = jMessage.children[3];
-        roleAtEVMS.innerHTML = roleAtEVMS.innerHTML.replace("Role at EVMS: ", "");
+            var roleAtEVMS = jMessage.children[3];
+            roleAtEVMS.innerHTML = roleAtEVMS.innerHTML.replace("Role at EVMS: ", "");
 
-        var message = jMessage.children[4];
-        message.innerHTML = message.innerHTML.replace("Message: ", "");
+            var message = jMessage.children[4];
+            message.innerHTML = message.innerHTML.replace("Message: ", "");
 
-        jMessage.insertBefore(tempImg, jMessage.children[0]);
-        imageContainer.innerHTML = "";
+            jMessage.insertBefore(tempImg, jMessage.children[0]);
+            imageContainer.innerHTML = "";
+        }
+        feedCell.setAttribute("name","processed");
     }
 }
 function hideUnwantedElementsInModal(number){
@@ -99,16 +102,24 @@ function hideUnwantedElements2(index) {
         hideUnwantedElementsInModal(index);
     }
 }
-window.onload = function(){
-    //If first page load, reload to show assets.
-    if (typeof(Storage) !== "undefined" && localStorage.getItem("firstPageLoad") == "") {
-        localStorage.setItem("firstPageLoad", "true");
-        location.reload();
-    }
-    for(var i = 0; i < numberOfColumns; i++){
-        sleep(hideUnwantedElements, i, this, 500, 500);
-    }
-    var j = 0;
+function getCellCount(){
+    totalCells = document.getElementsByClassName("feed-item").length;
+}
+function loadMoreButton(){
+    var checkExist = setInterval(function() {
+        if($(".juicer-button").length && k == 0){
+            var tempTotalCells = document.getElementsByClassName("feed-item").length;
+            if(tempTotalCells > totalCells){
+                reformatDocument();
+                k += 1;
+            }
+        }
+        else if($(".juicer-button").length == 0){
+            k = 0;
+        }
+     }, 100); // check every 100ms
+}
+function handleModals(){
     var checkExist = setInterval(function() {
         if ($('.j-overlay').length) {
            hideUnwantedElements2(j);
@@ -118,5 +129,24 @@ window.onload = function(){
             j = 0;
         }
      }, 100); // check every 100ms
+}
+function reformatDocument(){
+    for(var i = 0; i < numberOfColumns; i++){
+        sleep(hideUnwantedElements, i, this, 500, 500);
+    }
+}
+var totalCells = 0;
+var j = 0;
+var k = 0;
+window.onload = function(){
+    sleep(getCellCount, 0, this, 100, 100);
+    //If first page load, reload to show assets.
+    if (typeof(Storage) !== "undefined" && localStorage.getItem("firstPageLoad") == "") {
+        localStorage.setItem("firstPageLoad", "true");
+        location.reload();
+    }
+    reformatDocument();
+    handleModals();
+    sleep(loadMoreButton, 0, this, 100, 100);
 }
 //[end] - James Scott McDowell - 6/7/2020 - 1:57PM
