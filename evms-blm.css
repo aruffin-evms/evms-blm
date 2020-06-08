@@ -207,39 +207,47 @@ html {
   display: none;
 }
 
-/* .j-title {
-  position: relative !important;
-  top: -50px !important;
+.j-text {
+  padding: 0 !important;
 }
 
-.j-overlay-text {
+.j-overlay-text > *, .j-overlay-text a {
   color: white !important;
 }
+
 .j-message img {
   max-height: 300px;
   object-fit: cover;
+  width: 100%;
   position: relative;
-  top: -98px;
+  top: 0;
+}
+
+
+/* add padding to the child elements */
+.j-message p:nth-child(1),
+.j-message p:nth-child(5),
+.j-message p:nth-child(6) {
+  left: 15px;
 }
 
 .j-message p:nth-child(1) {
   position: relative !important;
-  top: 280px;
+  /* top: 320px; */
 }
 
-.j-message p:nth-child(2) {
-  display: none;
-}
-
-.j-message p:nth-child(3) {
+.j-message p:nth-child(5) {
   position: relative;
-  top: 255px !important;
+  top: 10px;
 }
 
-.j-message p:nth-child(4) {
+.j-message p:nth-child(6) {
   position: relative;
-  top: 270px !important;
-} */
+  top: 15px;
+} 
+
+
+
 
 /* form stack styles */
 .fsBody, .fsForm {
