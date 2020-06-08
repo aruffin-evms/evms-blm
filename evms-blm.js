@@ -13,6 +13,7 @@ messageBox.placeholder = 'Type your message';
 submitButton.value = "Add your message";
 */
 //[start] - James Scott McDowell - 6/7/2020 - 1:57PM
+var numberOfColumns = 3;
 function sleep(auxiliaryFunction, columnNumber, element, range, wait){
     var i = 0.00;
     (function loop () {
@@ -67,33 +68,6 @@ function hideUnwantedElements(columnNumber) {
         imageContainer.innerHTML = "";
     }
 }
-/*
-    var feed = document.querySelector('.j-stacker');
-    var feedColumn = feed.children[columnNumber];
-    for(var j = 0; j < feedColumn.children.length; j++){
-        var feedCell = feedColumn.children[j];
-        var feedText = feedCell.children[1];  
-        var feedMessage = feedText.children[0];
-        var feedMessageText = feedMessage.children[3];
-        feedMessageText.innerHTML = feedMessageText.innerHTML.replace("Message: ", "");
-
-        var feedMessageChildren = feedMessage.childNodes;
-        var paragraphCount = 0;
-        for(var i = 0; i < feedMessageChildren.length; i++){
-            if(feedMessageChildren[i].nodeName == "P"){
-                paragraphCount++;
-            }
-        }
-        if(paragraphCount == 4){
-            var feedImageContainer = feedMessage.children[4];
-            var feedImageLink = feedImageContainer.children[0];
-            var img = document.createElement("img");
-            img.src = feedImageLink.href;
-            feedMessage.appendChild(img);
-            feedImageContainer.innerHTML = "";
-        }
-    }
-*/
 function hideUnwantedElementsInModal(number){
     var jOverlay = document.body.lastChild;
     var jOverlayContent = jOverlay.children[0];
@@ -126,7 +100,11 @@ function hideUnwantedElements2(index) {
     }
 }
 window.onload = function(){
-    var numberOfColumns = document.getElementsByClassName("j-stacker")[0].children.length;
+    //If first page load, reload to show assets.
+    if (typeof(Storage) !== "undefined" && localStorage.getItem("firstPageLoad") == "") {
+        localStorage.setItem("firstPageLoad", "true");
+        location.reload();
+    }
     for(var i = 0; i < numberOfColumns; i++){
         sleep(hideUnwantedElements, i, this, 500, 500);
     }
