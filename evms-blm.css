@@ -222,7 +222,7 @@ html {
 
 .j-message p:nth-child(1) {
   position: relative !important;
-  top: 370px;
+  top: 280px;
 }
 
 .j-message p:nth-child(2) {
@@ -231,12 +231,12 @@ html {
 
 .j-message p:nth-child(3) {
   position: relative;
-  top: 325px !important;
+  top: 255px !important;
 }
 
 .j-message p:nth-child(4) {
   position: relative;
-  top: 340px !important;
+  top: 270px !important;
 }
 
 /* form stack styles */
