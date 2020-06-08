@@ -208,7 +208,7 @@ html {
 }
 
 .j-text {
-  padding: 0 !important;
+  padding: 0 0 15px 0 !important;
 }
 
 .j-overlay-text > *, .j-overlay-text a {
