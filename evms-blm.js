@@ -1,4 +1,4 @@
-/*
+
 const firstName = document.getElementById('field93569054-first');
 const lastName = document.getElementById('field93569054-last');
 const email = document.getElementById('field93569057');
@@ -11,7 +11,7 @@ email.placeholder = 'Email';
 messageBox.placeholder = 'Type your message';
 
 submitButton.value = "Add your message";
-*/
+
 //[start] - James Scott McDowell - 6/7/2020 - 1:57PM
 var numberOfColumns = 3;
 function sleep(auxiliaryFunction, columnNumber, element, range, wait){

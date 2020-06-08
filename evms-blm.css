@@ -187,6 +187,7 @@ html {
   border: solid 2px #fafafa;
   background-color: #212121 !important;
   border-width: 1px !important; 
+  /* pointer-events: none !important; */
 }
 
 .feed-item h3, .feed-item p, .feed-item a, .j-twitter-quote-text {
