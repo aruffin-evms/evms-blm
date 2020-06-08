@@ -126,7 +126,7 @@ function hideUnwantedElements2(index) {
     }
 }
 window.onload = function(){
-    var numberOfColumns = 3;
+    var numberOfColumns = document.getElementsByClassName("j-stacker")[0].children.length;
     for(var i = 0; i < numberOfColumns; i++){
         sleep(hideUnwantedElements, i, this, 500, 500);
     }
