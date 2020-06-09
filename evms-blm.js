@@ -1,6 +1,20 @@
+/*
+const firstName = document.getElementById('field93569054-first');
+const lastName = document.getElementById('field93569054-last');
+const messageBox = document.getElementById('field93569061');
+const submitButton = document.getElementById('fsSubmitButton3910490');
 
+firstName.placeholder = 'First name';
+lastName.placeholder = 'Last name';
+messageBox.placeholder = 'Type your message';
+
+submitButton.value = "Add your message";
+*/
 //[start] - James Scott McDowell - 6/7/2020 - 1:57PM
 var numberOfColumns = 3;
+var totalCells = 0;
+var j = 0;
+var k = 0;
 function sleep(auxiliaryFunction, columnNumber, element, range, wait){
     var i = 0.00;
     (function loop () {
@@ -36,24 +50,30 @@ function hideUnwantedElements(columnNumber) {
             var jText = feedCell.children[1];
             var jMessage = jText.children[0];
 
-            var imageContainer = jMessage.children[1];
-            popTextNodes(imageContainer);
-            var imageAnchor = imageContainer.children[0];
-            var imageURL = imageAnchor.href;
-            var tempImg = document.createElement("img");
-            tempImg.src = imageURL;
-
-            var formalName = jMessage.children[2];
-            formalName.innerHTML = "";
-
-            var roleAtEVMS = jMessage.children[3];
-            roleAtEVMS.innerHTML = roleAtEVMS.innerHTML.replace("Role at EVMS: ", "");
-
-            var message = jMessage.children[4];
-            message.innerHTML = message.innerHTML.replace("Message: ", "");
-
-            jMessage.insertBefore(tempImg, jMessage.children[0]);
-            imageContainer.innerHTML = "";
+            var jMessageParagraphs = jMessage.children;
+            for(var i = 0; i < jMessageParagraphs.length; i++){
+                if(jMessageParagraphs[i].innerHTML.search("image:") >= 0){
+                    var imageContainer = jMessageParagraphs[i];
+                    popTextNodes(imageContainer);
+                    var imageAnchor = imageContainer.children[0];
+                    var imageURL = imageAnchor.href;
+                    var tempImg = document.createElement("img");
+                    tempImg.src = imageURL;
+                    jMessage.insertBefore(tempImg, jMessage.children[0]);
+                    imageContainer.innerHTML = "";
+                }
+                else if(jMessageParagraphs[i].innerHTML.search("Name:") >= 0){
+                    jMessageParagraphs[i].innerHTML = "";
+                }
+                else if(jMessageParagraphs[i].innerHTML.search("Role at EVMS:") >= 0){
+                    var roleAtEVMS = jMessageParagraphs[i];
+                    roleAtEVMS.innerHTML = roleAtEVMS.innerHTML.replace("Role at EVMS:", "");
+                }
+                else if(jMessageParagraphs[i].innerHTML.search("Message:") >= 0){
+                    var message = jMessageParagraphs[i];
+                    message.innerHTML = message.innerHTML.replace("Message:", "");
+                }
+            }
         }
         feedCell.setAttribute("name","processed");
     }
@@ -65,24 +85,30 @@ function hideUnwantedElementsInModal(number){
     var jOverlayText = jPostOverlay.children[1];
     var jMessage = jOverlayText.children[1];
 
-    var imageContainer = jMessage.children[1];
-    popTextNodes(imageContainer);
-    var imageAnchor = imageContainer.children[0];
-    var imageURL = imageAnchor.href;
-    var tempImg = document.createElement("img");
-    tempImg.src = imageURL;
-
-    var formalName = jMessage.children[2];
-    formalName.innerHTML = "";
-
-    var roleAtEVMS = jMessage.children[3];
-    roleAtEVMS.innerHTML = roleAtEVMS.innerHTML.replace("Role at EVMS: ", "");
-
-    var message = jMessage.children[4];
-    message.innerHTML = message.innerHTML.replace("Message: ", "");
-
-    jMessage.insertBefore(tempImg, jMessage.children[0]);
-    imageContainer.innerHTML = "";
+    var jMessageParagraphs = jMessage.children;
+    for(var i = 0; i < jMessageParagraphs.length; i++){
+        if(jMessageParagraphs[i].innerHTML.search("image:") >= 0){
+            var imageContainer = jMessageParagraphs[i];
+            popTextNodes(imageContainer);
+            var imageAnchor = imageContainer.children[0];
+            var imageURL = imageAnchor.href;
+            var tempImg = document.createElement("img");
+            tempImg.src = imageURL;
+            jMessage.insertBefore(tempImg, jMessage.children[0]);
+            imageContainer.innerHTML = "";
+        }
+        else if(jMessageParagraphs[i].innerHTML.search("Name: ") >= 0){
+            jMessageParagraphs[i].innerHTML = "";
+        }
+        else if(jMessageParagraphs[i].innerHTML.search("Role at EVMS: ") >= 0){
+            var roleAtEVMS = jMessageParagraphs[i];
+            roleAtEVMS.innerHTML = roleAtEVMS.innerHTML.replace("Role at EVMS: ", "");
+        }
+        else if(jMessageParagraphs[i].innerHTML.search("Message:") >= 0){
+            var message = jMessageParagraphs[i];
+            message.innerHTML = message.innerHTML.replace("Message: ", "");
+        }
+    }
 }
 function hideUnwantedElements2(index) {
     if(index == 0){
@@ -96,6 +122,7 @@ function loadMoreButton(){
     var checkExist = setInterval(function() {
         if($(".juicer-button").length && k == 0){
             var tempTotalCells = document.getElementsByClassName("feed-item").length;
+            console.log(tempTotalCells);
             if(tempTotalCells > totalCells){
                 reformatDocument();
                 k += 1;
@@ -122,9 +149,11 @@ function reformatDocument(){
         sleep(hideUnwantedElements, i, this, 500, 500);
     }
 }
-var totalCells = 0;
-var j = 0;
-var k = 0;
+function reformatListener(){
+    var test = setInterval(function() {
+        reformatDocument();
+    }, 100); // check every 100ms
+}
 window.onload = function(){
     sleep(getCellCount, 0, this, 100, 100);
     //If first page load, reload to show assets.
@@ -132,8 +161,7 @@ window.onload = function(){
         localStorage.setItem("firstPageLoad", "true");
         location.reload();
     }
-    reformatDocument();
-    handleModals();
-    sleep(loadMoreButton, 0, this, 100, 100);
+    //reformatListener();
+    //handleModals();
 }
 //[end] - James Scott McDowell - 6/7/2020 - 1:57PM
