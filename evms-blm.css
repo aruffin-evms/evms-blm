@@ -68,17 +68,18 @@ html {
 }
 
 .evms-blm__subtitle {
-  font-size: 24px;
+  font-size: 18px;
   color: #fafafa;
-  max-width: 600px;
+  max-width: 95%;
   margin: 0 auto;
-  padding-top: 50px;
-  text-align: center;
+  padding-top: 15px;
+  text-align: left;
 }
 
 @media(min-width: 900px) {
   .evms-blm__subtitle {
-    font-size: 40px;
+    font-size: 24px;
+    padding-top: 25px;
   }
 }
 
@@ -142,7 +143,7 @@ html {
 .evms-blm__solidarity-wall {
   height: auto;
   max-width: 1440px;
-  margin: 60px auto;
+  margin: 100px auto;
   overflow: scroll;
 }
 
@@ -174,8 +175,15 @@ html {
   /* border: solid 1px gray !important; */
 }
 
-.j-twitter-quote-text {
-
+.j-text {
+  padding: 0 0 15px 0 !important;
+}
+.j-overlay-text {
+  color: white !important;
+}
+.j-overlay-text img {
+  max-height: 550px;
+  margin-left: 15px;
 }
 
 .feed-item {
@@ -207,8 +215,13 @@ html {
   display: none;
 }
 
+.j-message p {
+  /* padding: 0 0 15px 0 !important; */
+  margin-left: 15px;
+} 
+
 .j-message p:nth-child(2) {
-  display: none;
+  display: none !important;
 }
 /* form stack styles */
 .fsBody, .fsForm {
