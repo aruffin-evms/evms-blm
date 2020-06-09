@@ -27,16 +27,6 @@ tr, th, td {
 }
 /* [End] css reset */
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 a {
   text-decoration: none;
 }
@@ -111,6 +101,8 @@ html {
   background-color: #fafafa !important;
   color: #212121 !important;
   border-radius: 5px !important;
+  /* width: 250px !important; */
+  /* height: 50px !important; */
   font-size: 20px !important;
   transition: all 1s;
   font-family: myriad-pro, myriad, sans-serif !important;
@@ -154,7 +146,7 @@ html {
   overflow: scroll;
 }
 
-/* button rollover animation */
+/* /* button rollover animation */
 
 .juicer-button:hover, #fsSubmitButton3910490:hover, .evms-blm__cta:hover, #fsNextButton3910490:hover, #fsPreviousButton3910490:hover {
   background-color: #212121 !important;
@@ -165,7 +157,7 @@ html {
 
 /* juicer feed styles */
 .juicer-feed  {
-  animation: fadeIn 3s;
+  background-color: #212121;
 }
 
 @media(max-width: 899px) {
@@ -178,6 +170,9 @@ html {
 .j-display-filters {
   display: none !important;
 }
+.j-stacker-wrapper {
+  /* border: solid 1px gray !important; */
+}
 
 .j-twitter-quote-text {
 
@@ -187,7 +182,6 @@ html {
   border: solid 2px #fafafa;
   background-color: #212121 !important;
   border-width: 1px !important; 
-  /* pointer-events: none !important; */
 }
 
 .feed-item h3, .feed-item p, .feed-item a, .j-twitter-quote-text {
@@ -213,51 +207,13 @@ html {
   display: none;
 }
 
-.j-text {
-  padding: 0 0 15px 0 !important;
+.j-message p:nth-child(2) {
+  display: none;
 }
-
-.j-overlay-text > *, .j-overlay-text a {
-  color: white !important;
-}
-
-.j-message img {
-  max-height: 300px;
-  object-fit: cover;
-  width: 100%;
-  position: relative;
-  top: 0;
-}
-
-
-/* add padding to the child elements */
-.j-message p:nth-child(1),
-.j-message p:nth-child(5),
-.j-message p:nth-child(6) {
-  left: 15px;
-}
-
-.j-message p:nth-child(1) {
-  position: relative !important;
-}
-
-.j-message p:nth-child(5) {
-  position: relative;
-  top: 10px;
-}
-
-.j-message p:nth-child(6) {
-  position: relative;
-  top: 15px;
-  margin-right: 25px !important;
-} 
-
-
-
-
 /* form stack styles */
 .fsBody, .fsForm {
   background-color: #212121 !important;
+  /* color: #fafafa !important; */
 }
 
 .fsLabel {
@@ -293,6 +249,8 @@ html {
   background-color: #fafafa !important;
   color: #212121 !important;
   border-radius: 5px !important;
+  /* width: 250px !important;
+  height: 50px !important; */
   font-size: 20px !important;
   transition: all 1s;
   font-family: myriad-pro, myriad, sans-serif !important;
@@ -300,9 +258,18 @@ html {
   padding: 15px 30px;
 }
 
+/* #fsSubmitButton3910490:hover {
+  transform: scale(1.2);
+} */
+
 /* first name */
 #field93569057 {
   display: none;
+}
+
+/* file upload */
+#fsCell93615324 {
+  /* display: none; */
 }
 
 #confirmationPage3910490 {
@@ -312,7 +279,8 @@ html {
 #field93569054-last::placeholder,
 #field93569057::placeholder,
 #field93569061::placeholder {
-  color: #fafafa !important;
+  /* content: 'first name'; */
+  color: #fafafa;
 }
 
 #field93615324DeleteButton {
