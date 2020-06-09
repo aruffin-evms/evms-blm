@@ -78,8 +78,9 @@ html {
 
 @media(min-width: 900px) {
   .evms-blm__subtitle {
-    font-size: 24px;
+    font-size: 20px;
     padding-top: 25px;
+    line-height: 27px;
   }
 }
 
