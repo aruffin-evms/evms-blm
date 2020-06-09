@@ -161,7 +161,7 @@ window.onload = function(){
         localStorage.setItem("firstPageLoad", "true");
         location.reload();
     }
-    //reformatListener();
-    //handleModals();
+    reformatListener();
+    handleModals();
 }
 //[end] - James Scott McDowell - 6/7/2020 - 1:57PM
